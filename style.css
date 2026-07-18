@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  background: #100034;
+  color: #fff;
+}
+
+/* Remove bullets */
+ul {
+  list-style: none;
+}
+
+/* Main wrapper */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;           /* center content */
+  padding: 4rem 2rem;
+}
+
+/* Heading */
+.main__heading {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* Cards Layout */
+.cards__inner {
+  display: grid;                              /* better than flex here */
+  grid-template-columns: repeat(2, 1fr);      /* 2 cards in first row */
+  gap: 2.5rem;
+}
+
+/* Make 3rd card full width */
+.card:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Card Style */
+.card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: #2b2b2b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: 0.4s ease;
+}
+
+/* Hover lift effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.card__heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon */
+.card__heading i {
+  font-size: 1.6rem;
+}
+
+/* Subtitle */
+.card__price {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Button */
+.card__cta {
+  margin-top: auto;
+  padding: 0.9rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  color: #fff;
+}
+
+/* GitHub */
+.card:nth-child(1) .card__cta {
+  background: #24292e;
+}
+.card:nth-child(1) .card__cta:hover {
+  background: #000;
+}
+
+/* LinkedIn */
+.card:nth-child(2) .card__cta {
+  background: #0a66c2;
+}
+.card:nth-child(2) .card__cta:hover {
+  background: #004182;
+}
+
+/* YouTube */
+.card:nth-child(3) .card__cta {
+  background: #ff0000;
+}
+.card:nth-child(3) .card__cta:hover {
+  background: #cc0000;
+}
+
+/* Icon Brand Colors */
+.fa-github { color: #ffffff; }
+.fa-linkedin { color: #0a66c2; }
+.fa-youtube { color: #ff0000; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(3) {
+    grid-column: span 1;
+  }
+}
